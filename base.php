@@ -31,6 +31,7 @@ if ( ! defined('KOHANA_START_MEMORY'))
  * @param   string  source language
  * @return  string
  */
+/*
 function __($string, array $values = NULL, $source = NULL)
 {
 	if ( ! $source)
@@ -47,4 +48,4 @@ function __($string, array $values = NULL, $source = NULL)
 	}
 
 	return empty($values) ? $string : strtr($string, $values);
-}
+}*/

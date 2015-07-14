@@ -136,4 +136,22 @@ class Kohana_I18n {
 		return I18n::$_cache[$lang] = $table;
 	}
 
+	public static function t($string, array $values = NULL, $source = NULL)
+	{
+		if ( ! $source)
+		{
+			// Use the default source language
+			$source = I18n::$source;
+		}
+
+		if ($source !== I18n::$lang)
+		{
+			// The message and target languages are different
+			// Get the translation for this message
+			$string = I18n::get($string);
+		}
+
+		return empty($values) ? $string : strtr($string, $values);
+	}
+
 } // End I18n
